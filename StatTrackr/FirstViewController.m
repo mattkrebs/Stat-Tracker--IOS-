@@ -25,11 +25,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+   // int numberTest = 99;
     
     hPlayers = [[NSMutableArray alloc]initWithObjects:[[Player alloc] initWithFirstName:@"Matt" lastName:@"Krebs"], 
                 [[Player alloc] initWithFirstName:@"Sam" lastName:@"Snead"], 
                 [[Player alloc] initWithFirstName:@"Robb" lastName:@"Akerson"],
-                [[Player alloc] initWithFirstName:@"George" lastName:@"Hilal"], 
+                [[Player alloc] initWithFirstName:@"George" lastName:@"Hilal" jerseyNumber:99], 
                 [[Player alloc] initWithFirstName:@"Courney" lastName:@"Love"], nil];
     aPlayers = [[NSMutableArray alloc]initWithObjects:@"Michelle Krebs", @"Sarah Akerson", @"Andrea Hilal",@"Courtney Love", @"Janet Snead", nil];
     
@@ -77,7 +78,7 @@
         if(tableView.tag == 1){
             Player * player = (Player *)[hPlayers objectAtIndex:indexPath.row];
             NSLog(@"%@ %@", player.firstName, player.lastName);
-            cell.textLabel.text = player.firstName;
+            cell.textLabel.text = [player PlayerNameWithJerseyNumber];
         }else{
             NSLog(@"%@", [aPlayers objectAtIndex:indexPath.row]);
             cell.textLabel.text = [aPlayers objectAtIndex:indexPath.row];

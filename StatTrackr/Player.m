@@ -10,6 +10,7 @@
 
 @implementation Player
 @synthesize firstName = _firstName, lastName = _lastName, fouls = _fouls, number = _number;
+@synthesize jerseyNumber = _jerseyNumber;
 
 
 -(id)initWithFirstName:(NSString *)fName lastName:(NSString *) lName{
@@ -17,5 +18,18 @@
     self.lastName = lName;
     
     return self;
+}
+
+-(id)initWithFirstName:(NSString *)fName lastName:(NSString *) lName jerseyNumber:(int) jNumber{
+    self.firstName = fName;
+    self.lastName = lName;
+    self.jerseyNumber = jNumber;
+    
+    return self;
+}
+
+-(NSString *)PlayerNameWithJerseyNumber{
+    
+    return [NSString stringWithFormat:@"%@ %@ - %d",self.firstName,self.lastName,self.jerseyNumber];
 }
 @end

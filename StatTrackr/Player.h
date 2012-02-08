@@ -10,17 +10,21 @@
 
 @interface Player : NSObject
 {
-    NSInteger * number;
+    int number;
     NSString * firstName;
     NSString * lastName;
     NSInteger * fouls;
+    int jerseyNumber;
     
 }
 
 @property (nonatomic) NSInteger * number;
 @property (nonatomic) NSInteger * fouls;
+@property (nonatomic) int jerseyNumber;
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSString * lastName;
 
 -(id)initWithFirstName:(NSString *)fName lastName:(NSString *) lName;
+-(id)initWithFirstName:(NSString *)fName lastName:(NSString *) lName jerseyNumber:(int) jNumber;
+-(NSString *)PlayerNameWithJerseyNumber;
 @end
