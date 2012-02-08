@@ -20,6 +20,7 @@
 		9614640F14E03DE800218285 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614640E14E03DE800218285 /* SecondViewController.m */; };
 		9614641114E03DE800218285 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 9614641014E03DE800218285 /* second.png */; };
 		9614641314E03DE800218285 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9614641214E03DE800218285 /* second@2x.png */; };
+		9614642E14E2145500218285 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614642D14E2145500218285 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		9614640E14E03DE800218285 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		9614641014E03DE800218285 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		9614641214E03DE800218285 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		9614642C14E2145500218285 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		9614642D14E2145500218285 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 		961463F714E03DE800218285 /* StatTrackr */ = {
 			isa = PBXGroup;
 			children = (
+				9614642A14E2137B00218285 /* Classes */,
 				9614640014E03DE800218285 /* AppDelegate.h */,
 				9614640114E03DE800218285 /* AppDelegate.m */,
 				9614640314E03DE800218285 /* MainStoryboard.storyboard */,
@@ -113,6 +117,15 @@
 				961463FF14E03DE800218285 /* StatTrackr-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9614642A14E2137B00218285 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9614642C14E2145500218285 /* Player.h */,
+				9614642D14E2145500218285 /* Player.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +199,7 @@
 				9614640214E03DE800218285 /* AppDelegate.m in Sources */,
 				9614640814E03DE800218285 /* FirstViewController.m in Sources */,
 				9614640F14E03DE800218285 /* SecondViewController.m in Sources */,
+				9614642E14E2145500218285 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +313,7 @@
 				9614641814E03DE800218285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

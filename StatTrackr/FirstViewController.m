@@ -7,8 +7,11 @@
 //
 
 #import "FirstViewController.h"
+#import "Player.h"
 
 @implementation FirstViewController
+@synthesize aPlayers, hPlayers;
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -22,8 +25,62 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [Player alloc] init
+    hPlayers = [[NSMutableArray alloc]initWithObjects:@"Matt Krebs", @"Robb Akerson", @"George Hilal",@"Kevin Love", @"Sam Snead", nil];
+    aPlayers = [[NSMutableArray alloc]initWithObjects:@"Michelle Krebs", @"Sarah Akerson", @"Andrea Hilal",@"Courtney Love", @"Janet Snead", nil];
+    
+    UITableView *homeTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
+    homeTable.tag = 1;
+    homeTable.delegate = self;
+    homeTable.dataSource = self;
+    
+    UITableView *awayTable = [[UITableView alloc] initWithFrame:CGRectMake(300, 0, 200, 300)];
+    awayTable.tag = 2;
+    awayTable.delegate = self;
+    awayTable.dataSource = self;
+    
+    [self.view addSubview:homeTable];
+    [homeTable reloadData];
+    [self.view addSubview:awayTable];
+    [awayTable reloadData];
+
+    
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+    
+}
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    
+    return [hPlayers count];
+    
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    
+    static NSString *MyIdentifier = @"CellIdentity";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    if (cell == nil){
+        cell = [[UITableViewCell alloc] init];
+        if(tableView.tag == 1){
+            NSLog(@"%@", [hPlayers objectAtIndex:indexPath.row]);
+            cell.textLabel.text = [hPlayers objectAtIndex:indexPath.row];
+        }else{
+            NSLog(@"%@", [aPlayers objectAtIndex:indexPath.row]);
+            cell.textLabel.text = [aPlayers objectAtIndex:indexPath.row];
+        }
+    }
+    return cell;
+
+}
 - (void)viewDidUnload
 {
     [super viewDidUnload];

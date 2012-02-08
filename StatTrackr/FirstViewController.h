@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
+@interface FirstViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+{
+    NSMutableArray * hPlayers;
+    NSMutableArray * aPlayers;
+    
+}
+@property (nonatomic, retain) NSMutableArray * hPlayers;
+@property (nonatomic, retain) NSMutableArray * aPlayers;
 @end
