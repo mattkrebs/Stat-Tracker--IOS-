@@ -25,8 +25,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [Player alloc] init
-    hPlayers = [[NSMutableArray alloc]initWithObjects:@"Matt Krebs", @"Robb Akerson", @"George Hilal",@"Kevin Love", @"Sam Snead", nil];
+    
+    hPlayers = [[NSMutableArray alloc]initWithObjects:[[Player alloc] initWithFirstName:@"Matt" lastName:@"Krebs"], 
+                [[Player alloc] initWithFirstName:@"Sam" lastName:@"Snead"], 
+                [[Player alloc] initWithFirstName:@"Robb" lastName:@"Akerson"],
+                [[Player alloc] initWithFirstName:@"George" lastName:@"Hilal"], 
+                [[Player alloc] initWithFirstName:@"Courney" lastName:@"Love"], nil];
     aPlayers = [[NSMutableArray alloc]initWithObjects:@"Michelle Krebs", @"Sarah Akerson", @"Andrea Hilal",@"Courtney Love", @"Janet Snead", nil];
     
     UITableView *homeTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
@@ -71,8 +75,9 @@
     if (cell == nil){
         cell = [[UITableViewCell alloc] init];
         if(tableView.tag == 1){
-            NSLog(@"%@", [hPlayers objectAtIndex:indexPath.row]);
-            cell.textLabel.text = [hPlayers objectAtIndex:indexPath.row];
+            Player * player = (Player *)[hPlayers objectAtIndex:indexPath.row];
+            NSLog(@"%@ %@", player.firstName, player.lastName);
+            cell.textLabel.text = player.firstName;
         }else{
             NSLog(@"%@", [aPlayers objectAtIndex:indexPath.row]);
             cell.textLabel.text = [aPlayers objectAtIndex:indexPath.row];
